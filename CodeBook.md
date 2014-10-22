@@ -10,4 +10,22 @@ Please refer to the following files for the raw data description:
 - feautures_info.txt
 
 This codebook explains only data transformations performed on top of the original dataset as it was.
-It is inspired by [Kirstin's Sample Codebook](https://class.coursera.org/getdata-008/forum/thread?thread_id=34).
+Moreover, it tackles only specific data transformations applied to distinct variables.
+For general data transformations applied to data as a whole please refer to README.md.
+
+This codebook is inspired by [Kirstin's Sample Codebook](https://class.coursera.org/getdata-008/forum/thread?thread_id=34).
+
+## Variables description
+
+#### Subject
+
+- Factor variable with levels 1-30
+- Each level represents one anonymous experiment participant.
+- Titled "Subject" because experiment participants are commonly referred to as subjects.
+- Inherits its values from "train\subject_train.txt" and "test\subject_test.txt"
+- Derives from the raw data without specific transformations
+ 
+#### Activity
+
+- Factor variable with levels "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"
+- Each level represents one type of activity performed by experiment participants.
