@@ -43,3 +43,23 @@ In this part, the code creates a data frame "short_data" that contains only the 
 First, it creates "short_data" as a data frame with the first two columns of "long_data", as Subject and Activity are ID- rather than measurement columns and thus should not be ommitted.
 
 Then, the code adds one-by-one those columns of "long_data" that contain "-mean()" or "-std()" in their titles to "short_data". In the author's opinion, other columns (like those on meanFreq()) are on means of metadata rather then on means of the measurements themselves and hence should be ommitted.
+
+#### Showing proper activity names
+
+In this part, the code changes numerical factor levels of the "Activity" variable to meaningfull names of activities.
+
+it reads the file "activity_labels.txt" that has too columns: levels of the activitis as presented in the raw data and the activity names. From the second column, the code creates a vector of activity names, and then it assignes those names to the names of the respective variable levels.
+
+#### Creating tidy dataset of averages
+
+In this part, the code aggregates the data on measurements for various observations of the same activity of the same subject by arithmetical averaging. It saves the results in a new "tidy_data" data frame.
+
+The code calls for the "reshape2" package, which you need to install in order for the code to run. This package contains functions that a very handy for such a task.
+
+First, the code calls "melt()" function of the package on the "short_data" data frame. This function makes one column for values of all the measurements and another column that lables those measurements. Hence, the melted data frame has just 4 columns: subject, activity, measurement names and measurement values.
+
+The melted dataset is not of use by itself, but the code uses it to call a "dcast()" function on it. This functions aggregates the values for each type of measurement for each particular activity of each particular subject. The code uses the "mean()" function for the aggregation - hence arithmetical means are calculated. The "dcast()" function automatically restores the original data structure (one column for each type of measurement). The results are saved as the "tidy_data" data frame.
+
+#### Writing data to a file
+
+In this part, the code writes tidy data from the "tidy_data" data frame to a text file "tidy_data.txt" with a default separator (tab). The column names are perserved as they are meaningfull. The row names are simply the row numbers and hence they are ommitted.
