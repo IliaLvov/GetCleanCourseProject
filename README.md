@@ -12,10 +12,22 @@ N.B. In each of its parts, the code sometimes creates R objects that are of no u
 
 #### Downloading data
 
+In this part, the code downloads the raw data into local files.
+
 First the code downloads the zip-archieve with the raw data to a working directory. The local copy of the archieve is given a name of "uncommon_name.zip" in an attemp to prevent possible clashes with other archieves stored on a user's machine. Please note that the download method is "curl", however you may need to change depending on your OS (please refer to Coursera lectures for further guidance).
 
 Then the code unzips the downloaded archieve into the working directory. As the archieve will not be used anymore, it is subsequently deleted by the code.
 
 Next the code stores parametres of the downnload (URL and date) into a data frame "dowload_data_info", as well as in a "UCI_HAR_data_download_info.csv" file in the working directory.
 
-####
+#### Importing and merging data
+
+In this part, the code creates a big data frame "long_data" that includes unaggregated data on all types of measurements.
+
+First, the code reads and merges the training data. For that it reads in data on subjects from "subject_train.txt", activities from "y_train.txt" and response measurements from "x_train.txt" into separate data frames. As each of the three data frames contains various variables on the same observations, they are subsequently merged column-wise.
+
+Then, the code performs the same job for the test data. Hence, it gets two data frames: one for the training data, the other for the test one. Those data frames contain the same variables for different observations, thus they are subsequently merged row-wise. The result of this merge is the "long_data" data frame.
+
+#### Adding column names
+
+In this part, the code names the columns 
