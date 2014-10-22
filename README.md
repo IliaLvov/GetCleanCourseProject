@@ -30,4 +30,16 @@ Then, the code performs the same job for the test data. Hence, it gets two data 
 
 #### Adding column names
 
-In this part, the code names the columns 
+In this part, the code changes the names of the columns from meaningless ("v1", "v2", ...) to meaningful ("Subject", "Activity", names of measurements).
+
+First, it "manually" assignes the names to the first to columns.
+
+Then it reads the file "features.txt" that has too columns: a count of the measurements and the measurements names. From the second column, the code creates a vector of measurement names, and then it assignes those names to the data columns one by one.
+
+#### Subsetting mean and SD columns
+
+In this part, the code creates a data frame "short_data" that contains only the measurements of means and standard deviations.
+
+First, it creates "short_data" as a data frame with the first two columns of "long_data", as Subject and Activity are ID- rather than measurement columns and thus should not be ommitted.
+
+Then, the code adds one-by-one those columns of "long_data" that contain "-mean()" or "-std()" in their titles to "short_data". In the author's opinion, other columns (like those on meanFreq()) are on means of metadata rather then on means of the measurements themselves and hence should be ommitted.
