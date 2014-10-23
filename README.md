@@ -24,7 +24,7 @@ Next, the code stores parametres of the download (URL and date) into a data fram
 
 In this part, the code creates a big data frame "long_data" that includes unaggregated data on all types of measurements.
 
-First, the code reads and merges the training data. For that it reads in data on subjects from "subject_train.txt", activities from "y_train.txt" and response measurements from "x_train.txt" into separate data frames. As each of the three data frames contains various variables on the same observations, they are subsequently merged column-wise.
+First, the code reads and merges the training data. For that it reads in data on subjects from "subject_train.txt", activities from "y_train.txt" and response measurements from "x_train.txt" into separate data frames. As each of the three data frames contains different variables on the same observations, they are subsequently merged column-wise.
 
 Then, the code performs the same job for the test data. Hence, it gets two data frames: one for the training data, the other for the test one. Those data frames contain the same variables for different observations, thus they are subsequently merged row-wise. The result of this merge is the "long_data" data frame.
 
