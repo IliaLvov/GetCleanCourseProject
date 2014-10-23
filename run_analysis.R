@@ -112,7 +112,7 @@ tidy_data <- dcast(melted_data, Subject + Activity ~ variable, mean)
 # Finally, removing the intermediary.
 remove(melted_data)
 
-# ---- Writing data to a file
+# ---- Writing data to a file ----
 
 # So far we have 3 versions of the dataset in memory.
 # The first one is long_data. It has all the variables and all the cases.
