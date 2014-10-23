@@ -54,10 +54,8 @@ In this part, the code aggregates the data on measurements for various observati
 
 The code calls for the "reshape2" package, which you need to install in order for the code to run. This package contains functions that a very handy for such a task.
 
-First, the code calls "melt()" function of the package on the "short_data" data frame. This function makes one column for values of all the measurements and another column that lables those measurements. Hence, the melted data frame has just 4 columns: subject, activity, measurement names and measurement values.
-
-The melted dataset is not of use by itself, but the code uses it to call a "dcast()" function on it. This functions aggregates the values for each type of measurement for each particular activity of each particular subject. The code uses the "mean()" function for the aggregation - hence arithmetical means are calculated. The "dcast()" function automatically restores the original data structure (one column for each type of measurement). The results are saved as the "tidy_data" data frame.
+First, the code calls "melt()" function of the package on the "short_data" data frame. The melted data frame has just 4 columns: subject, activity, measurement names and measurement values. Such data frame is not of use by itself, but it is used to call a "dcast()" function on it. This functions aggregates the values for each type of measurement for each particular activity of each particular subject. The code uses the "mean()" function for the aggregation, hence arithmetical means are calculated. The "dcast()" function automatically restores the original data structure (one column for each type of measurement). The results are saved as the "tidy_data" data frame.
 
 #### Writing data to a file
 
-In this part, the code writes tidy data from the "tidy_data" data frame to a text file "tidy_data.txt" with a default separator (tab). The column names are perserved as they are meaningfull. The row names are simply the row numbers and hence they are ommitted.
+In this part, the code writes tidy data from the "tidy_data" data frame to a text file "tidy_data.txt" with a default separator (tab). The column names are perserved as they are meaningfull. The row names are simply the row numbers and hence they are ommitted (it is also specified by the assignment requirements).
