@@ -46,7 +46,7 @@ Then, the code adds one-by-one those columns of "long_data" that contain "-mean(
 
 In this part, the code changes numerical factor levels of the "Activity" variable to meaningfull names of activities.
 
-it reads the file "activity_labels.txt" that has too columns: levels of the activitis as presented in the raw data and the activity names. From the second column, the code creates a vector of activity names, and then it assignes those names to the names of the respective variable levels.
+it reads the file "activity_labels.txt" that has two columns: levels of the activitis as presented in the raw data and the activity names. From the second column, the code creates a vector of activity names, and then it assignes those names to the names of the respective variable levels.
 
 #### Creating tidy dataset of averages
 
