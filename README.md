@@ -32,9 +32,7 @@ Then, the code performs the same job for the test data. Hence, it gets two data 
 
 In this part, the code changes the names of the columns from meaningless ("v1", "v2", ...) to meaningful ("Subject", "Activity", names of measurements).
 
-First, it "manually" assignes the names to the first to columns.
-
-Then it reads the file "features.txt" that has too columns: a count of the measurements and the measurements names. From the second column, the code creates a vector of measurement names, and then it assignes those names to the data columns one by one.
+First, it "manually" assignes the names to the first two columns. Then it reads the file "features.txt" that has two columns: the first one counts measurement types and the second one names them. From the second column, the code creates a vector of measurement names, and then it assignes those names to the data columns one by one.
 
 #### Subsetting mean and SD columns
 
