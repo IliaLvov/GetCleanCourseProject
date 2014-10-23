@@ -8,17 +8,17 @@ This is a repo for a submission for the "Getting and Cleaning Data" Coursera mod
 
 The analysis is performed by the Run_analysis.R script file. The script is divided in several logical parts by the aids of in-line comments. The comments in the R-file should give a good overview of how it works, however some more detailed discussion of each code part is provided below.
 
-N.B. In each of its parts, the code sometimes creates R objects that are of no use beyond the limits of this part. In this case, the code automatically removes those objects from the memory at the end of the part. Respective operations of the code will not be discussed below every time; however, you can trace them by reading comments in the R-script file.
+N.B. In each of its parts, the code sometimes creates R objects that are of no use beyond the limits of this part. In this case, the code automatically removes those objects from the memory at the end of the part. Respective operations of the code will not be discussed in this document; however, you can trace them by reading comments in the R-script file.
 
 #### Downloading data
 
 In this part, the code downloads the raw data into local files.
 
-First the code downloads the zip-archieve with the raw data to a working directory. The local copy of the archieve is given a name of "uncommon_name.zip" in an attemp to prevent possible clashes with other archieves stored on a user's machine. Please note that the download method is "curl", however you may need to change depending on your OS (please refer to Coursera lectures for further guidance).
+First the code downloads the zip-archieve with the raw data to a working directory. The local copy of the archieve is given a name of "uncommon_name.zip" in an attemp to prevent possible clashes with other archieves stored on a user's machine. Please note that the download method is "curl", however you may need to change it depending on your OS (please refer to Coursera lectures for further guidance).
 
 Then the code unzips the downloaded archieve into the working directory. As the archieve will not be used anymore, it is subsequently deleted by the code.
 
-Next the code stores parametres of the downnload (URL and date) into a data frame "dowload_data_info", as well as in a "UCI_HAR_data_download_info.csv" file in the working directory.
+Next, the code stores parametres of the download (URL and date) into a data frame "dowload_data_info", as well as in a "UCI_HAR_data_download_info.csv" file in the working directory.
 
 #### Importing and merging data
 
